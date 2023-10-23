@@ -21,7 +21,7 @@ const Title = styled.h1`
 `;
 const Desc = styled.p`
   color: #aaa;
-  font-size: 0.8rem;
+  font-size: 1rem;
 `;
 const ColumnsWrapper = styled.div`
   display: grid;
@@ -56,7 +56,7 @@ const ButtonsWrapper = styled.div`
   margin-top: 25px;
 `;
 
-export default function Featured({ product }) {
+export default function Featured() {
   const { addProduct } = useContext(CartContext);
   function addFeaturedToCart() {
     addProduct(product._id);
@@ -67,14 +67,17 @@ export default function Featured({ product }) {
         <ColumnsWrapper>
           <Column>
             <div>
-              <Title>{product.title}</Title>
-              <Desc>{product.description}</Desc>
+              <Title>MacBook 14 Pro</Title>
+              <Desc>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Accusamus magnam est saepe sit corporis ut. Unde incidunt porro
+                commodi laudantium quas eos nisi corporis animi minima quia iure
+                veritatis quis, quaerat, magni eius itaque impedit fuga tempora
+                ipsam deleniti nihil iste amet maiores numquam! Dolores quod
+                commodi reiciendis. Totam, impedit.
+              </Desc>
               <ButtonsWrapper>
-                <ButtonLink
-                  href={"/product/" + product._id}
-                  outline={1}
-                  white={1}
-                >
+                <ButtonLink href={"/products"} outline={1} white={1}>
                   Read more
                 </ButtonLink>
                 <Button white onClick={addFeaturedToCart}>
@@ -87,7 +90,7 @@ export default function Featured({ product }) {
           <Column>
             <img
               src="https://dawid-next-ecommerce.s3.amazonaws.com/1679151719649.png"
-              alt=""
+              alt="Macbook 14 Pro"
             />
           </Column>
         </ColumnsWrapper>

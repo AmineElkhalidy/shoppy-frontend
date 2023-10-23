@@ -3,7 +3,7 @@ import { primary } from "@/lib/colors";
 
 export const ButtonStyle = css`
   border: 0;
-  padding: 5px 15px;
+  padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
   display: inline-flex;
@@ -26,6 +26,8 @@ export const ButtonStyle = css`
     css`
       background-color: #fff;
       color: #000;
+      font-size: 1rem;
+      font-weight: 500;
     `}
   ${(props) =>
     props.white &&

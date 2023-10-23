@@ -24,10 +24,10 @@ const WhiteBox = styled(Link)`
 
 const Title = styled(Link)`
   font-weight: normal;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   color: inherit;
   text-decoration: none;
-  margin: 0;
+  margin: 1rem;
 `;
 
 const ProductInfoBox = styled.div`
@@ -35,13 +35,10 @@ const ProductInfoBox = styled.div`
 `;
 
 const PriceRow = styled.div`
-  display: block;
-  @media screen and (min-width: 768px) {
-    display: flex;
-    gap: 5px;
-  }
+  display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 10px;
   margin-top: 2px;
 `;
 
@@ -63,16 +60,18 @@ export default function ProductBox({ _id, title, description, price, images }) {
     <ProductWrapper>
       <WhiteBox href={url}>
         <div>
-          <img src={images?.[0]} alt="" />
+          <img src={images?.[0]} alt={title} />
         </div>
       </WhiteBox>
       <ProductInfoBox>
         <Title href={url}>{title}</Title>
         <PriceRow>
           <Price>${price}</Price>
-          <Button block onClick={() => addProduct(_id)} primary outline>
-            Add to cart
-          </Button>
+          <div>
+            <Button block onClick={() => addProduct(_id)} primary outline>
+              Add to cart
+            </Button>
+          </div>
         </PriceRow>
       </ProductInfoBox>
     </ProductWrapper>
