@@ -8,17 +8,22 @@ import BarsIcon from "@/components/icons/Bars";
 const StyledHeader = styled.header`
   background-color: #222;
 `;
+
 const Logo = styled(Link)`
   color: #fff;
   text-decoration: none;
   position: relative;
   z-index: 3;
+  font-size: 1.2rem;
+  font-weight: 600;
 `;
+
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 20px 0;
+  padding: 25px 0;
 `;
+
 const StyledNav = styled.nav`
   ${(props) =>
     props.mobileNavActive
@@ -42,15 +47,24 @@ const StyledNav = styled.nav`
     padding: 0;
   }
 `;
+
 const NavLink = styled(Link)`
   display: block;
   color: #aaa;
   text-decoration: none;
   padding: 10px 0;
+  font-weight: 500;
+  transition: color 0.3s;
+
+  &:hover {
+    color: white;
+  }
+
   @media screen and (min-width: 768px) {
     padding: 0;
   }
 `;
+
 const NavButton = styled.button`
   background-color: transparent;
   width: 30px;
@@ -68,6 +82,7 @@ const NavButton = styled.button`
 export default function Header() {
   const { cartProducts } = useContext(CartContext);
   const [mobileNavActive, setMobileNavActive] = useState(false);
+
   return (
     <StyledHeader>
       <Center>
