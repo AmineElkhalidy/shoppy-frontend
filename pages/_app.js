@@ -1,5 +1,6 @@
 import { Rubik } from "next/font/google";
 import { createGlobalStyle } from "styled-components";
+import { CartContextProvider, CartContext } from "@/components/CartContext";
 
 const rubik = Rubik({ subsets: ["latin"] });
 const GlobalStyles = createGlobalStyle`
@@ -13,7 +14,9 @@ export default function App({ Component, pageProps }) {
   return (
     <main className={rubik.className}>
       <GlobalStyles />
-      <Component {...pageProps} />
+      <CartContextProvider value={CartContext}>
+        <Component {...pageProps} />
+      </CartContextProvider>
     </main>
   );
 }
