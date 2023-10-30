@@ -4,12 +4,11 @@ import { buffer } from "micro";
 import { Order } from "@/models/order";
 
 const endpointSecret =
-  "whsec_634d3142fd2755bd61adaef74ce0504bd2044848c8aac301ffdb56339a0ca78d";
+  "whsec_b420b40cdf2f7be5aa6d9cc72e5d918225cee24033d5e528f32fffc403be9278";
 
 export default async function handler(req, res) {
   await mongooseConnect();
   const sig = req.headers["stripe-signature"];
-
   let event;
 
   try {
@@ -45,6 +44,5 @@ export default async function handler(req, res) {
 export const config = {
   api: { bodyParser: false },
 };
-
 // bright-thrift-cajole-lean
 // acct_1Lj5ADIUXXMmgk2a

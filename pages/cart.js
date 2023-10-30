@@ -142,6 +142,7 @@ export default function CartPage() {
       </>
     );
   }
+
   return (
     <>
       <Header />
