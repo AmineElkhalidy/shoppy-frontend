@@ -8,11 +8,17 @@ const Title = styled.h2`
   font-weight: 600;
 `;
 
+const Container = styled.div`
+  padding-bottom: 3rem;
+`;
+
 export default function NewProducts({ products }) {
   return (
-    <Center>
-      <Title>New Arrivals</Title>
-      <ProductsGrid products={products} />
-    </Center>
+    <Container>
+      <Center>
+        <Title>New Arrivals</Title>
+        <ProductsGrid products={products} />
+      </Center>
+    </Container>
   );
 }
